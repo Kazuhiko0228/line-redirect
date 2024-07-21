@@ -14,10 +14,14 @@
       gtag('config', 'G-89THGV5T0J');
     </script>
     <script type="text/javascript">
-        // UTMパラメーターを含む公式LINEのリンク
+        // Preserve UTM parameters and include them in the redirect link
+        var params = new URLSearchParams(window.location.search);
         var lineLink = "https://lin.ee/CLGm7rq";
+        if (params.toString()) {
+            lineLink += "?" + params.toString();
+        }
 
-        // リダイレクトする
+        // Redirect to the new link with UTM parameters
         window.location.href = lineLink;
     </script>
 </head>
